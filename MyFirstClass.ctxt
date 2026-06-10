@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=MyFirstClass
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=theString\ seperator
+comment2.target=void\ printWithSeperator(java.lang.String,\ java.lang.String)
+numComments=3
