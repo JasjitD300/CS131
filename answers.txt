@@ -10,3 +10,8 @@ Task8: ls [A-Z]*
 Task9: ls logs/BACKUP.[0-9][0-9][0-9]
 Task10: cp -r data backup
 Task11: mv data/readme.txt data/README.md
+Task13: git init
+Task13: git add answers.txt
+Task13: git commit -m "linux basics challenge"
+Task14: git clone https://github.com/JasjitD300/CS131.git
+Task12: rm -ri backup/data
