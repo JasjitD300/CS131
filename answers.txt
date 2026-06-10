@@ -1,0 +1,17 @@
+Task1: cd /Users/jasjitdeol/cs131/ws1
+Task2: ls ../data
+Task3: file app01.log ../.env
+Task4: ls -alhr
+Task5: ls -lS logs
+Task6: ls -l logs/app02.log
+Task6 values: size=1048576 owner=jasjitdeol modified=Jun 10 09:21
+Task7: ls data/Data?.csv
+Task8: ls [A-Z]*
+Task9: ls logs/BACKUP.[0-9][0-9][0-9]
+Task10: cp -r data backup
+Task11: mv data/readme.txt data/README.md
+Task13: git init
+Task13: git add answers.txt
+Task13: git commit -m "linux basics challenge"
+Task14: git clone https://github.com/JasjitD300/CS131.git
+Task12: rm -ri backup/data
