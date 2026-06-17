@@ -1,0 +1,26 @@
+Q2: git log --oneline -3
+Q5: git rm --cached bigdata.bin
+Q5: echo "bigdata.bin" >> .gitignore
+Q5: git add .gitignore
+Q5: git commit --amend
+Q5: git push
+Q6: git switch -c feature-summary
+Q7: git add summary.md
+Q7: git commit -m "ws2: add summary"
+Q8: git diff main..feature-summary
+Q1: git add notes.md
+Q1: git commit -m "ws2: add task line"
+Q3: fb3ee0b
+Q4: git revert fb3ee0b
+Q9: git switch main
+Q9: git merge feature-summary
+Q10: git branch -d feature-summary
+Q11: git merge conflict-branch-2
+Q11 conflicted file: summary.md
+Q12: git diff --name-only --diff-filter=U
+Q15: git fetch origin
+Q15: git log HEAD..origin/main --oneline
+Q16: git fetch downloads remote changes without modifying my current branch, while git pull downloads and merges those changes into my current branch.
+Q13: nano summary.md
+Q14: git add summary.md
+Q14: git commit
