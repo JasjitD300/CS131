@@ -1,0 +1,62 @@
+A1: ls -l > listing.txt ; date >> listing.txt
+A2: ls /nonexistent_dir 2> errors.txt
+A2 Answer: Standard error file descriptor is 2.
+
+A3: ls /nonexistent_dir /etc > output.txt 2> errors.txt
+
+A4: ls /nonexistent_dir /etc &> combined.txt
+
+A5: ls /nonexistent_dir /etc 2>/dev/null
+A5 Answer: Only the /etc listing appears because stderr is redirected to /dev/null. /dev/null discards anything written to it.
+
+A6: sort fruits.txt | uniq
+
+A7: sort fruits.txt | uniq -c | sort -nr
+
+A8: grep ERROR server.log | wc -l
+
+A9: grep ERROR server.log > errors_only.txt
+
+A10: grep -oE '^[A-Z]+' server.log | sort | uniq -c | sort -nr
+
+A11: grep -oE '"state":"[A-Z]{2}"' /data/yelp/yelp_academic_dataset_business.json | sort | uniq -c | sort -nr | head -5
+
+B1: id
+B1 Answer: uid is the user ID that identifies the user. gid is the primary group ID that identifies the user's group.
+
+B2: ls -l fruits.txt
+B2 Answer: -rw-rw-r--
+Owner: rw- (read, write)
+Group: rw- (read, write)
+Other: r-- (read only)
+
+B3: umask ; echo "top secret" > secret.txt ; ls -l secret.txt
+B3 Answer: umask is 0002. New files get rw-rw-r-- permissions.
+
+B4: chmod 000 secret.txt ; chmod u+rw secret.txt
+B4 Answer: cat secret.txt returned "Permission denied".
+
+B5: chmod 640 fruits.txt
+B5 Answer: Octal mode 640 gives owner rw-, group r--, others ---.
+
+B6: find . -type f -user $(whoami) -perm -u=w
+
+C1: cat > long.sh << 'EOF' ; bash long.sh > log.txt &
+C1 Answer: PID was 854491. tail log.txt showed tick messages being written.
+
+C2: jobs
+C2 Answer: jobs shows the job number, status, and command.
+
+C3: fg %1 ; Ctrl-Z ; jobs
+C3 Answer: jobs showed the state as Stopped.
+
+C4: bg %1 ; jobs
+C4 Answer: jobs showed the state as Running.
+
+C5: kill %1 ; jobs
+C5 Answer: kill sends SIGTERM (signal 15) by default.
+
+C6: bash long.sh > log.txt & ; disown %2 ; ps -p 854578
+C6 Answer: The process no longer appeared in jobs but was still running according to ps.
+
+C7 Answer: disown removes the job from the shell's job table so it does not receive a hangup signal when the terminal closes.
